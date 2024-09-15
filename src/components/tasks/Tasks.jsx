@@ -2,6 +2,9 @@ import { TaskCard } from './TaskCard';
 import style from './Tasks.module.css';
 
 export function Tasks() {
+    console.log();
+    
+    
     return (
         <section className={style.taskContent}>
             <div className={style.column}>

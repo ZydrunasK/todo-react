@@ -3,13 +3,9 @@ import style from './TaskCard.module.css';
 
 export function TaskCard() {
     const [moreAct, setMoreAct] = useState('false');
-    const [back, setBack] = useState('false');
 
-    function close() {
-        if (back === 'true') {
-            setMoreAct('false'),
-            setBack('false');
-        }
+    function closeBack() {
+            setMoreAct('false');
     }
 
     function handleAct() {
@@ -17,17 +13,12 @@ export function TaskCard() {
         if (moreAct === 'true') {
             setMoreAct('false');
         }
-
-        setBack('true');
-        if (back === 'true') {
-            setBack('false');
-        }
     }
 
 
     return (
         <>
-        <div className={style.background} data-visible={ moreAct } onClick={ close }></div>
+        <div className={style.background} data-visible={ moreAct } onClick={ closeBack }></div>
             <li className={style.task}>
                 <div className={style.header}>
                     <div className={style.more} onClick={ handleAct }>...</div>
