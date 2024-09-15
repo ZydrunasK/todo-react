@@ -2,27 +2,27 @@ import { useState } from 'react';
 import style from './TaskCard.module.css';
 
 export function TaskCard() {
-    const [moreAct, setMoreAct] = useState('false');
+    const [openMenu, setOpenMenu] = useState('false');
 
     function closeBack() {
-            setMoreAct('false');
+            setOpenMenu('false');
     }
 
-    function handleAct() {
-        setMoreAct('true');
-        if (moreAct === 'true') {
-            setMoreAct('false');
+    function handleMenu() {
+        setOpenMenu('true');
+        if (openMenu === 'true') {
+            setOpenMenu('false');
         }
     }
 
 
     return (
         <>
-        <div className={style.background} data-visible={ moreAct } onClick={ closeBack }></div>
+        <div className={style.background} data-visible={ openMenu } onClick={ closeBack }></div>
             <li className={style.task}>
                 <div className={style.header}>
-                    <div className={style.more} onClick={ handleAct }>...</div>
-                    <div className={style.moreActions} data-visible={ moreAct }>
+                    <div className={style.more} onClick={ handleMenu }>...</div>
+                    <div className={style.moreActions} data-visible={ openMenu }>
                         <button className={style.button} type="button">Move up</button>
                         <button className={style.button} type="button">Move down</button>
                         <hr />
